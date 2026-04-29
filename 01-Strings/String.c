@@ -21,9 +21,3 @@ int GetLength(const char*cadena){
      }
      return longitud;
 }
-
-int main(){
-
-    char*cad="hola";
-    printf("%d",GetLength(cad));
-}
