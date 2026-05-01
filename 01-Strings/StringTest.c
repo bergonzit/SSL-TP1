@@ -6,5 +6,6 @@ int main(void){
     assert(IsEmpty("hola")==0);
     assert(GetLength("palabra")==7);
     assert(AreEqual("hola","hola"));
+    assert(AreEqual("",""));
     return 0;
 }
