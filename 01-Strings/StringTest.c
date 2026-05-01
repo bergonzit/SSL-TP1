@@ -7,5 +7,7 @@ int main(void){
     assert(GetLength("palabra")==7);
     assert(AreEqual("hola","hola"));
     assert(AreEqual("",""));
+    assert(contains("Paralelo", 'e'));
+    assert(!contains("Paralelo", 's'));
     return 0;
 }

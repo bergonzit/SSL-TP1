@@ -21,4 +21,11 @@ int GetLength(const char*);
  * Postcondición: retorna true si tienen el mismo contenido, false si difieren
  */
 bool AreEqual(const char*cadena1, char*cadena2);
+
+/** 
+ Verifica si una cadena de caracteres contiene un caracter particular
+ Precondición: cadena != NULL
+ PostCondición: devuelve true si encuentra coincidencia, sino retorna false
+*/
+bool contains(const char* cadena, char caracter);
 #endif 

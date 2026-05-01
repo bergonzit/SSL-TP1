@@ -23,6 +23,8 @@
 # LONGITUDES
 # =========================
 
+longitudes: longitudes.c string.o
+	$(CC) $(CFLAGS) -o longitudes longitudes.c String.o
 
 # =========================
 # MAYORLONGITUD

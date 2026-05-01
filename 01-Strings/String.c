@@ -46,5 +46,13 @@ bool AreEqual(const char*cadena1, char*cadena2){
       }
     }
 
+bool contains(const char* cadena, char caracter){
+    int length = GetLength(cadena);
+    
+    for(int i=0; i < length; i++){
+        if(cadena[i] == caracter) return true;
+    }
 
+    return false;
+}
 
