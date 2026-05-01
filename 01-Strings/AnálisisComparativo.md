@@ -49,3 +49,25 @@ se encarga de almacenar el espacio a momento de runtime, recibiendo el tamaño q
 free(ptr);
 ```
 - En Python este espacio se utiliza en casi todo momento de forma automatica, todo objeto vive en la heap y las variables son referencias a esos objetos.
+
+# Soporte ASCII, Unicode, UTF-8
+
+## C:
+C brinda naturalmente y de forma predeterminada soporte para ASCII,
+ debido a que un char es un byte (8 bits) con el que se puede representar 
+ el número que le corresponde a cada letra en ASCII. 
+ En cambio, para Unicode habría que utilizar bibliotecas externas, 
+ ya que no hay forma de representar caracteres especiales con un byte 
+ (debido a la cantidad limitada de números que se pueden representar con 8 bits).
+Para UTF-8, si bien se puede almacenar en un char[], 
+C lo trata como una secuencia de bytes crudos 
+sin entender que algunos caracteres ocupan más de uno
+
+## Python:
+En cuanto a Python, los Strings en este lenguaje
+utilizan directamente los Code Points de Unicode, por lo que tambien brindan soporta
+para ASCII (siendo este un subconjunto de Unicode)
+En cuanto a UTF-8, Python brinda soporte nativamente, ya que se usa
+str(Unicode) para manejar texto dentro del programa, pero 
+permite convertir cualquier string a UTF-8 y viceversa de forma simple 
+con .encode('utf-8') y .decode('utf-8'), sin necesidad de bibliotecas externas.
