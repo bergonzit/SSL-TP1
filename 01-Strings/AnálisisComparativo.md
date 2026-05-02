@@ -71,3 +71,23 @@ En cuanto a UTF-8, Python brinda soporte nativamente, ya que se usa
 str(Unicode) para manejar texto dentro del programa, pero 
 permite convertir cualquier string a UTF-8 y viceversa de forma simple 
 con .encode('utf-8') y .decode('utf-8'), sin necesidad de bibliotecas externas.
+
+# Representación interna en C
+- Estructura básica  
+Un string en C es un arreglo contiguo de bytes (char[]) o un puntero a char que contiene caracteres y termina con un carácter nulo '\0' que marca el final.
+
+- Metadatos y longitud  
+No existen metadatos asociados al bloque: la longitud no se almacena explícitamente. Para obtenerla se recorre la memoria hasta encontrar '\0' (por ejemplo, strlen).
+
+char saludo[] = {'H','o','l','a','\0'}; // arreglo con terminador nulo
+
+
+# Representación interna en Python
+- Estructura básica  
+Un string en Python es un objeto de la clase str. Internamente es una estructura que contiene al menos un puntero al buffer de caracteres y la longitud del string.
+
+- Metadatos y longitud  
+La longitud se almacena explícitamente en el objeto; len(s) es O(1). No hace falta recorrer el contenido para conocer su tamaño.
+
+saludo = "Hola"
+- Internamente: objeto str con campos: longitud = 4, buffer = ['H','o','l','a']

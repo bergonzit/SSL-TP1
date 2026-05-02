@@ -14,6 +14,8 @@ int main(void){
 
     Concatenate("ab", "cd", buffer);
     assert(AreEqual(buffer, "abcd"));
-    
+    assert(potencia(5, 0) == 1);
+    assert(potencia(2, 3) == 8);
+    assert(potencia(-2, 2) == 4);
     return 0;
 }

@@ -36,4 +36,6 @@ bool contains(const char* cadena, char caracter);
  */
 void Concatenate(char *cadena1, char *cadena2, char *concatenacion);
 
+int potencia(int base, int exp);
+
 #endif 

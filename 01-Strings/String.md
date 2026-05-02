@@ -12,3 +12,7 @@ contains(s, c) = true <=> ∃ i (0<= i < |s| ∧ s[i] = c)
 
 Concatenate : Σ* × Σ* → Σ* / Concatenate(cadena1, cadena2) = { cadena2 si cadena1 = ε
                                                              { c1 · Concatenate(s1, cadena2) si cadena1 = c1 · s1
+
+Power : pow: R x N -> R 
+        pow(a, n) = { 1, si n = 0
+                    { a * pow(a, n-1), si n > 0

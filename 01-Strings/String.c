@@ -72,3 +72,14 @@ void Concatenate(char *cadena1, char *cadena2, char *concatenacion){
     *concatenacion = '\0';
 
 }
+
+int potencia(int base, int exp) {
+    // Caso base: cualquier número elevado a 0 es 1
+    if (exp == 0) {
+        return 1;
+    }
+    // Caso recursivo
+    else {
+        return base * potencia(base, exp - 1);
+    }
+}
