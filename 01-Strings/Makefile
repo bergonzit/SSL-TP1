@@ -7,7 +7,8 @@
 # =========================
 # COMPILACIÓN GENERAL
 # =========================
-
+string.o: String.c String.h
+	$(CC) $(CFLAGS) -c String.c -o String.o
 
 # =========================
 # TESTS
@@ -39,7 +40,8 @@ longitudes: longitudes.c string.o
 # =========================
 # SUMA
 # =========================
-
+suma: suma.c string.o
+   $(CC) $(CFLAGS) suma.c string.o -o suma
 
 # =========================
 # CONTAINS
