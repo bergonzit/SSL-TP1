@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra
 # =========================
 # COMPILACIÓN GENERAL
 # =========================
-all: test longitudes ##suma(faltan funciones ToInteger y AreDecimalDigits)
+all: test enlineas longitudes ##mayorlongitud ##todosiguales ##suma
 
 String.o: String.c String.h
 	$(CC) $(CFLAGS) -c String.c -o String.o
@@ -24,7 +24,8 @@ test: Stringtest.o String.o
 # =========================
 # ENLINEAS
 # =========================
-
+enlineas : enlineas.c String.o
+	$(CC) $(CFLAGS) -o enlineas enlineas.c String.o
 
 # =========================
 # LONGITUDES
