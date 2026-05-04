@@ -2,19 +2,25 @@
 # =========================
 # CONFIGURACIÓN BASE
 # =========================
-
-
+CC = gcc 
+CFLAGS = -Wall -Wextra 
 # =========================
 # COMPILACIÓN GENERAL
 # =========================
-string.o: String.c String.h
+all: test longitudes ##suma(faltan funciones ToInteger y AreDecimalDigits)
+
+String.o: String.c String.h
 	$(CC) $(CFLAGS) -c String.c -o String.o
 
 # =========================
 # TESTS
 # =========================
+Stringtest.o: StringTest.c String.h
+	$(CC) $(CFLAGS) -c StringTest.c -o StringTest.o
 
-
+test: Stringtest.o String.o 
+	$(CC)  Stringtest.o String.o -o test   
+	./test 
 # =========================
 # ENLINEAS
 # =========================
@@ -24,7 +30,7 @@ string.o: String.c String.h
 # LONGITUDES
 # =========================
 
-longitudes: longitudes.c string.o
+longitudes: longitudes.c String.o
 	$(CC) $(CFLAGS) -o longitudes longitudes.c String.o
 
 # =========================
@@ -40,29 +46,11 @@ longitudes: longitudes.c string.o
 # =========================
 # SUMA
 # =========================
-suma: suma.c string.o
-   $(CC) $(CFLAGS) suma.c string.o -o suma
-
-# =========================
-# CONTAINS
-# =========================
+suma: suma.c String.o
+	$(CC) $(CFLAGS) suma.c String.o -o suma
 
 
-# =========================
-# AREDECIMALDIGITS
-# =========================
 
 
-# =========================
-# TOINTEGER
-# =========================
-
-
-# =========================
-# CONCATENATE
-# =========================
-
-
-# =========================
-# OPERACIÓN EXTRA
-# =========================
+clean:
+	rm -f *.o test enlineas longitudes mayorlongitud todosiguales suma

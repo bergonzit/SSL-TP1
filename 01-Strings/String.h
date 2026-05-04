@@ -2,7 +2,7 @@
 #ifndef STRING_H    
 #define STRING_H
 #include<stdbool.h>
-// los strings pueden ser char* o char[]
+
 /**
  * Verifica si una cadena está vacía
  * Precondición: string != NULL
