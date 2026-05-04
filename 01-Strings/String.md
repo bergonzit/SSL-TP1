@@ -16,3 +16,6 @@ Concatenate : Σ* × Σ* → Σ* / Concatenate(cadena1, cadena2) = { cadena2 si 
 Power : pow: R x N -> R 
         pow(a, n) = { 1, si n = 0
                     { a * pow(a, n-1), si n > 0
+
+toInteger : Σ* -> Z / toInteger(s)={ 0 si s = ε
+                                   { signo* Σ(suma i=0 hasta k) s[i]*(10^i) // donde s=s[k],s[k-1] ... s[1],s[0]

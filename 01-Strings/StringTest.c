@@ -17,5 +17,7 @@ int main(void){
     assert(potencia(5, 0) == 1);
     assert(potencia(2, 3) == 8);
     assert(potencia(-2, 2) == 4);
+    assert(toInteger("123")==123);
+    assert(toInteger("-456")==-456);
     return 0;
 }

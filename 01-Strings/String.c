@@ -83,3 +83,23 @@ int potencia(int base, int exp) {
         return base * potencia(base, exp - 1);
     }
 }
+
+int toInteger (const char* cadena){
+    int signo=1;
+    int valor=0;
+    int i=0;
+    int length = GetLength(cadena);
+    while (i<length){
+        if (cadena[i]=="-")
+        {
+            signo=-1;
+            i++;
+        }
+        if (cadena[i]>="0" && cadena[i]<="9")
+        {
+            valor=valor*10 + cadena[i]-"0";
+            i++;
+        }
+    }
+    return signo*valor;
+}

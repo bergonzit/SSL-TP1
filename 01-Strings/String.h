@@ -38,4 +38,6 @@ void Concatenate(char *cadena1, char *cadena2, char *concatenacion);
 
 int potencia(int base, int exp);
 
+int toInteger(const char* cadena);
+
 #endif 

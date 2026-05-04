@@ -106,3 +106,28 @@ La longitud se almacena explícitamente en el objeto; len(s) es O(1). No hace fa
 
 saludo = "Hola"
 - Internamente: objeto str con campos: longitud = 4, buffer = ['H','o','l','a']
+
+# String como argumento y retorno
+Basándose en la representación interna y según el lenguaje
+
+## En C:
+Para pasar un "string" en C, se deben utilizar punteros a caracteres (con la dirección del primer caracter que queramos) o se puede escribir de igual forma como arreglos ya que se interpretará lo mismo. Si queremos que la función no altere la cadena que le pasemos, se lo debe pasar como argumento constante.
+```
+void funcion (const char *texto);
+void funcion (char texto[]);
+```
+Si queremos que una función devuelva un "string", al igual que cuando se pasa como argumento, se debe indicar que la función devuelve un puntero a caracter que puede ser constante o no.
+```
+const char* devolvertexto(){
+    return "ABC";}
+```
+## En Python
+Para pasar un tipo de dato string, se puede definir con """...""", ""..." o '...', pasando de esta forma cadenas inmutables, por lo que la funcion que las utiliza necesariamente devolvera otra cadena modificada.
+```
+def saludo(nombre):                
+    print("Hola, " + nombre)
+saludo("Mundo") // -> Devolverá en consola "Hola Mundo".
+
+def despedida(nombre):
+    return "Adios, " + nombre //otra forma de devolver una cadena
+```               
