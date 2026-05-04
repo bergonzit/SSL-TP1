@@ -130,4 +130,27 @@ saludo("Mundo") // -> Devolverá en consola "Hola Mundo".
 
 def despedida(nombre):
     return "Adios, " + nombre //otra forma de devolver una cadena
+
 ```               
+## Operaciones con String en C y Python
+El manejo de strings presenta diferencias significativas entre el lenguaje C y Python. Mientras que en C las cadenas de caracteres se representan como arreglos de char terminados en un carácter nulo ('\0'), en Python el tipo str es un tipo nativo del lenguaje con soporte completo de operaciones de alto nivel.
+
+Este contraste impacta directamente en cómo se implementan y utilizan las operaciones sobre strings.
+
+En C, no existe un tipo string como tal en el lenguaje, sino que se utilizan: char * o char v[]
+
+Las operaciones sobre strings no forman parte del lenguaje en sí
+Deben ser implementadas manualmente o usando bibliotecas como <string.h>
+
+En Python, el tipo str es nativo del lenguaje e inmutable Con soporte completo de operaciones
+Ejemplo: Longitud-->len(s)
+Es una operación directa que no requiere conocer implementación interna
+Tenemos mas ejemplos como:
+s1 + s2        concatenación
+s1 == s2       comparación
+"abc" in s     contiene
+Las operaciones de strings en C requieren una implementación explícita y detallada, lo que refleja su naturaleza de bajo nivel. En contraste, Python ofrece un conjunto completo de operaciones integradas que simplifican el manejo de cadenas.
+
+En consecuencia, C es más adecuado cuando se necesita control fino y eficiencia, mientras que Python es más conveniente para desarrollo rápido y seguro.
+
+Este análisis evidencia cómo el nivel de abstracción de un lenguaje influye directamente en la complejidad de las operaciones básicas, como el manejo de cadenas.

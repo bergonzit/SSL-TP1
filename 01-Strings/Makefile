@@ -34,6 +34,11 @@ enlineas : enlineas.c String.o
 longitudes: longitudes.c String.o
 	$(CC) $(CFLAGS) -o longitudes longitudes.c String.o
 
+longitudes.o: longitudes.c String.h
+	$(CC) $(CFLAGS) -c longitudes.c
+
+String.o: String.c String.h
+	$(CC) $(CFLAGS) -c String.c
 # =========================
 # MAYORLONGITUD
 # =========================
