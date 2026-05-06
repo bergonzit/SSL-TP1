@@ -90,14 +90,14 @@ int toInteger (const char* cadena){
     int i=0;
     int length = GetLength(cadena);
     while (i<length){
-        if (cadena[i]=="-")
+        if (cadena[i]=='-')
         {
             signo=-1;
             i++;
         }
-        if (cadena[i]>="0" && cadena[i]<="9")
+        if (cadena[i]>='0' && cadena[i]<='9')
         {
-            valor=valor*10 + cadena[i]-"0";
+            valor=valor*10 + cadena[i]-'0';
             i++;
         }
     }
