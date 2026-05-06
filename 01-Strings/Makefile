@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra
 # =========================
 # COMPILACIÓN GENERAL
 # =========================
-all: test enlineas longitudes ##mayorlongitud ##todosiguales ##suma
+all: test enlineas longitudes ##mayorlongitud todosiguales ##suma
 
 String.o: String.c String.h
 	$(CC) $(CFLAGS) -c String.c -o String.o
@@ -47,7 +47,8 @@ String.o: String.c String.h
 # =========================
 # TODOSIGUALES
 # =========================
-
+todosiguales : todosiguales.c String.o
+	$(CC) $(CFLAGS) -o todosiguales todosiguales.c String.o
 
 # =========================
 # SUMA
