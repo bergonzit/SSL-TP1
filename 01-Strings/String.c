@@ -56,7 +56,7 @@ bool contains(const char* cadena, char caracter){
     return false;
 }
 
-void Concatenate(char *cadena1, char *cadena2, char *concatenacion){
+char *Concatenate(char *cadena1, char *cadena2){
     int long1 = GetLength(cadena1);
     int long2 = GetLength(cadena2);
 
