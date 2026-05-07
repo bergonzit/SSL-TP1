@@ -57,19 +57,20 @@ bool contains(const char* cadena, char caracter){
 }
 
 void Concatenate(char *cadena1, char *cadena2, char *concatenacion){
+    int long1 = GetLength(cadena1);
+    int long2 = GetLength(cadena2);
 
-    //Mientras no sea el final de la cadena 1, va a poner todos sus chars en concatenacion
-    for(int i = 0; cadena1[i] != '\0'; (i++, concatenacion++)) {
-        *concatenacion = cadena1[i];
-    }
+    char* ptr = malloc(long1 + long2 + 1);
+    if (!ptr) return NULL;
 
-    //Hace lo mismo con la cadena 2
-    for(int j = 0; cadena2[j] != '\0'; (j++, concatenacion++)) {
-        *concatenacion = cadena2[j];
-    }
+    char* aux = ptr; 
 
-    //Agrega el \0 al final de la cadena concatenada
-    *concatenacion = '\0';
+    while (*cadena1) *aux++ = *cadena1++;
+    while (*cadena2) *aux++ = *cadena2++;
+
+    *aux = '\0';
+    
+    return ptr;
 
 }
 
